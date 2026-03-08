@@ -561,6 +561,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         showAnnouncementsAdminMessage("Announcement deleted", "success");
+        resetAnnouncementForm();
         await fetchManagedAnnouncements();
         await fetchAnnouncements();
       } catch (error) {

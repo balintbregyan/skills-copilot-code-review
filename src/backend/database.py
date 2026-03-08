@@ -55,7 +55,7 @@ def init_database():
     if announcements_collection.count_documents({}) == 0:
         for announcement in initial_announcements:
             announcements_collection.insert_one(
-                {"_id": announcement["id"], **announcement})
+                {"_id": announcement["_id"], **announcement})
 
 
 # Initial database if empty
@@ -217,7 +217,7 @@ initial_teachers = [
 
 initial_announcements = [
     {
-        "id": "welcome-open-registration",
+        "_id": "welcome-open-registration",
         "message": "Activity registration is open. Check your favorite clubs before spots fill up.",
         "starts_at": None,
         "expires_at": "2099-12-31T23:59:59+00:00",
