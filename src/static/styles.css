@@ -433,7 +433,8 @@ button {
 }
 
 .close-modal,
-.close-login-modal {
+.close-login-modal,
+.close-announcements-modal {
   position: absolute;
   right: 12px;
   top: 8px;
@@ -707,16 +708,6 @@ footer {
 
 .announcements-modal-content {
   max-width: 640px;
-}
-
-.close-announcements-modal {
-  position: absolute;
-  right: 12px;
-  top: 8px;
-  font-size: 18px;
-  cursor: pointer;
-  color: var(--text-secondary);
-  line-height: 1;
 }
 
 .announcement-list {
