@@ -12,11 +12,21 @@
     />
   </head>
   <body>
+    <section
+      id="announcement-region"
+      class="announcement-region hidden"
+      aria-live="polite"
+      aria-label="School announcements"
+    ></section>
+
     <header>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
       <div id="user-controls">
         <div id="user-status">
+          <button id="manage-announcements-button" class="icon-button hidden">
+            <span>Announcements</span>
+          </button>
           <button id="login-button" class="icon-button">
             <span class="user-icon">👤</span>
             <span>Login</span>
@@ -131,6 +141,45 @@
           <button type="submit">Login</button>
         </form>
         <div id="login-message" class="hidden message"></div>
+      </div>
+    </div>
+
+    <!-- Announcements Modal -->
+    <div id="announcements-modal" class="modal hidden">
+      <div class="modal-content announcements-modal-content">
+        <span class="close-announcements-modal">&times;</span>
+        <h3>Manage Announcements</h3>
+
+        <div id="announcements-admin-message" class="hidden message"></div>
+
+        <div id="announcement-list" class="announcement-list"></div>
+
+        <form id="announcement-form" class="announcement-form">
+          <input type="hidden" id="announcement-id" />
+          <div class="form-group">
+            <label for="announcement-message">Message:</label>
+            <textarea
+              id="announcement-message"
+              required
+              maxlength="500"
+              placeholder="Share an announcement with students"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="announcement-start">Start Date (optional):</label>
+            <input type="datetime-local" id="announcement-start" />
+          </div>
+          <div class="form-group">
+            <label for="announcement-expires">Expiration Date:</label>
+            <input type="datetime-local" id="announcement-expires" required />
+          </div>
+          <div class="announcement-form-actions">
+            <button type="submit" id="save-announcement-button">Save Announcement</button>
+            <button type="button" id="reset-announcement-button" class="secondary-button">
+              Clear
+            </button>
+          </div>
+        </form>
       </div>
     </div>
 
